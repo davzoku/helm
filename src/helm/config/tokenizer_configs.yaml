@@ -267,3 +267,23 @@ tokenizer_configs:
       class_name: "helm.proxy.tokenizers.yalm_tokenizer.YaLMTokenizer"
     end_of_text_token: "</s>"
     prefix_token: "</s>"
+
+  # SEALion
+  - name: aisingapore/sealion7b-instruct-nc
+    tokenizer_spec:
+      class_name: "helm.proxy.tokenizers.huggingface_tokenizer.HuggingFaceTokenizer"
+    end_of_text_token: "<|endoftext|>"
+    prefix_token: ""
+
+  # SEALion
+  - name: aisingapore/sealion3b
+    tokenizer_spec:
+      class_name: "helm.proxy.tokenizers.huggingface_tokenizer.HuggingFaceTokenizer"
+    end_of_text_token: "<|endoftext|>"
+    prefix_token: ""
+
+  - name: aisingapore/sealion7b
+    tokenizer_spec:
+      class_name: "helm.proxy.tokenizers.huggingface_tokenizer.HuggingFaceTokenizer"
+    end_of_text_token: "<|endoftext|>"
+    prefix_token: ""

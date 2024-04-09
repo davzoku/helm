@@ -1816,3 +1816,33 @@ models:
     num_parameters: 100000000000
     release_date: 2022-06-23
     tags: [TEXT_MODEL_TAG, LIMITED_FUNCTIONALITY_TEXT_MODEL_TAG, ABLATION_MODEL_TAG]
+    
+  - name: aisingapore/sealion3b
+    display_name: SEA-LION-3B
+    description: SEA-LION-3B
+    creator_organization_name: aisingapore
+    access: open
+    num_parameters: 3000000000
+    release_date: 2023-10-13
+    # Does not support echo
+    tags: [TEXT_MODEL_TAG, LIMITED_FUNCTIONALITY_TEXT_MODEL_TAG]
+
+  - name: aisingapore/sealion7b
+    display_name: SEA-LION-7B
+    description: SEA-LION-7B
+    creator_organization_name: aisingapore
+    access: open
+    num_parameters: 7000000000
+    release_date: 2023-10-13
+    # Does not support echo
+    tags: [TEXT_MODEL_TAG, LIMITED_FUNCTIONALITY_TEXT_MODEL_TAG]
+
+  - name: aisingapore/sealion7b-instruct-nc
+    display_name: SEA-LION-7B-Instruct-NC
+    description: SEA-LION-7B-Instruct-NC
+    creator_organization_name: aisingapore
+    access: open
+    num_parameters: 7000000000
+    release_date: 2023-10-13
+    # Does not support echo
+    tags: [TEXT_MODEL_TAG, LIMITED_FUNCTIONALITY_TEXT_MODEL_TAG]

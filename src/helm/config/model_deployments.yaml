@@ -1589,3 +1589,28 @@ model_deployments:
     max_sequence_and_generated_tokens_length: 30048
     client_spec:
       class_name: "helm.proxy.clients.palmyra_client.PalmyraClient"
+
+  - name: aisingapore/sealion3b
+    model_name: aisingapore/sealion3b
+    tokenizer_name: aisingapore/sealion3b
+    max_sequence_length: 2048
+    max_sequence_and_generated_tokens_length: 2048
+    client_spec:
+      class_name: "helm.proxy.clients.sealion_client.SEALIONClient"     
+
+  - name: aisingapore/sealion7b
+    model_name: aisingapore/sealion7b
+    tokenizer_name: aisingapore/sealion7b
+    max_sequence_length: 2048
+    max_sequence_and_generated_tokens_length: 2048
+    client_spec:
+      class_name: "helm.proxy.clients.sealion_client.SEALIONClient"           
+
+  - name: aisingapore/sealion7b-instruct-nc
+    model_name: aisingapore/sealion7b-instruct-nc
+    tokenizer_name: aisingapore/sealion7b-instruct-nc
+    max_sequence_length: 2048
+    max_sequence_and_generated_tokens_length: 2048
+    client_spec:
+      class_name: "helm.proxy.clients.sealion_client.SEALIONClient"
+

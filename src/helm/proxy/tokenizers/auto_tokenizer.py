@@ -40,7 +40,9 @@ class AutoTokenizer(Tokenizer):
         organization: str = tokenizer_name.split("/")[0]
         cache_config: CacheConfig = build_cache_config(self.cache_path, self.mongo_uri, organization)
 
+        print(f"[DEBUG] tokenizer_name: {tokenizer_name}, organization: {organization}, cache_config: {cache_config}")
         tokenizer_config = get_tokenizer_config(tokenizer_name)
+        print(f"[DEBUG] tokenizer_config: {tokenizer_config}")
         if tokenizer_config:
             tokenizer_spec = inject_object_spec_args(
                 tokenizer_config.tokenizer_spec,

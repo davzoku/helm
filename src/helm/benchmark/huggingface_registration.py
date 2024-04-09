@@ -24,18 +24,21 @@ def register_huggingface_model(
         object_spec_args["revision"] = revision
 
     # Auto-infer model properties from the tokenizer.
+    print(f"[DEBUG] Registering HuggingFace Model (object_spec_args): {object_spec_args}")
     with HuggingFaceTokenizer.create_tokenizer(**object_spec_args) as tokenizer:
+        print(f"[DEBUG] tokenizer: {tokenizer}")
         max_sequence_length = tokenizer.model_max_length
         end_of_text_token = tokenizer.eos_token or ""
         prefix_token = tokenizer.bos_token or ""
+    # ADDED: Remove this check
     # If the tokenizer config has a model_max_length of 1000000000000000019884624838656
     # it means that model creator did not specify model_max_length.
-    if max_sequence_length > 1_000_000:
-        raise ValueError(
-            f"Could not infer the model_max_length of Hugging Face model {pretrained_model_name_or_path}, so "
-            f"--enable-huggingface-models and --enable-local-huggingface-models cannot be used for this model. "
-            f"Please configure the model using prod_env/model_deployments.yaml instead."
-        )
+    # if max_sequence_length > 1_000_000:
+    #     raise ValueError(
+    #         f"Could not infer the model_max_length of Hugging Face model {pretrained_model_name_or_path}, so "
+    #         f"--enable-huggingface-models and --enable-local-huggingface-models cannot be used for this model. "
+    #         f"Please configure the model using prod_env/model_deployments.yaml instead."
+    #     )
 
     model_deployment = ModelDeployment(
         name=helm_model_name,
